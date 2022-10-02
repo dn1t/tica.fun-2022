@@ -1,0 +1,91 @@
+html {
+  scroll-padding-top: 120px;
+}
+
+#article {
+  color: #d1d5db;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    width: 100%;
+    line-height: 1.2;
+    margin: 32px 0 14px 0;
+    padding-bottom: 8px;
+    display: inline-flex;
+    align-items: baseline;
+
+    a[class='anchor'] {
+      transition: opacity 150ms;
+      position: relative;
+      opacity: 0;
+
+      .octicon.octicon-link {
+        fill: #9ca3af;
+        left: -1.4rem;
+        top: -1.1rem;
+        position: absolute;
+      }
+    }
+
+    &:hover a[class='anchor'] {
+      opacity: 1;
+    }
+  }
+
+  h1,
+  h2 {
+    border-bottom: 1px solid #111827;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+
+  a {
+    color: #60a5fa;
+    transition: color 150ms;
+
+    &:hover {
+      color: #3b82f6;
+      text-decoration: underline;
+    }
+  }
+
+  p,
+  blockquote,
+  ul,
+  ol,
+  dl,
+  table,
+  pre,
+  details {
+    margin-bottom: 16px;
+  }
+
+  ul,
+  ol {
+    padding-left: 2rem;
+    list-style: initial;
+  }
+
+  li {
+    margin-top: 0.25rem;
+  }
+
+  pre {
+    background-color: #11182760;
+    border-radius: 0.75rem;
+    padding: 16px;
+  }
+}

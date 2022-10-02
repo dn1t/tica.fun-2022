@@ -1,0 +1,22 @@
+{
+  "imports": {
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.0.3",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.0.1",
+    "$fresh/": "https://deno.land/x/fresh@1.1.1/",
+    "canvas": "https://deno.land/x/canvaseno@v1.0.2/mod.ts",
+    "deno-dom": "https://deno.land/x/deno_dom@v0.1.35-alpha/deno-dom-wasm.ts",
+    "format-date": "https://deno.land/x/date_fns@v2.22.1/format/index.js",
+    "front-matter": "https://deno.land/std@0.158.0/encoding/front_matter.ts",
+    "gfm": "https://deno.land/x/gfm@0.1.26/mod.ts",
+    "join": "https://deno.land/std@0.158.0/path/mod.ts",
+    "preact": "https://esm.sh/preact@10.11.0",
+    "preact-helmet": "https://esm.sh/preact-helmet@4.0.0-alpha-3",
+    "preact/": "https://esm.sh/preact@10.11.0/",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@5.2.4",
+    "random-seed": "https://esm.sh/random-seed@0.3.0",
+    "sass": "https://deno.land/x/denosass@1.0.4/mod.ts",
+    "twind": "https://esm.sh/twind@0.16.17",
+    "twind/": "https://esm.sh/twind@0.16.17/",
+    "walk": "https://deno.land/std@0.158.0/fs/walk.ts"
+  }
+}
