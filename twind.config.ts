@@ -14,7 +14,7 @@ export default {
       '2xl': '1536px',
     },
     fontFamily: {
-      display: ['Onest', '평창체', 'sans-serif'],
+      display: ['Onest', '"Pretendard Variable"', 'sans-serif'],
       sans: ['"Pretendard Variable"', 'sans-serif'],
     },
   },
@@ -29,11 +29,6 @@ export default {
         fontFamily: 'Onest',
         fontWeight: '700',
         src: 'url("/Onest-Bold.woff") format("woff")',
-      },
-      {
-        fontFamily: '평창체',
-        fontWeight: '600',
-        src: 'url("/PyeongChang-Bold.otf") format("opentype")',
       },
       {
         fontFamily: 'Pretendard Variable',

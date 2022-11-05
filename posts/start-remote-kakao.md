@@ -1,8 +1,9 @@
 ---
-title: Hello, world!
-date: 2022-10-02
-abstract: 첫 글이에요.
-issueNumber: 1
+title: remote-kakao 시작하기
+date: 2022-10-08
+abstract: remote-kakao로 카카오톡 봇을 만들어봐요.
+hidden: true
+issueNumber: 2
 ---
 
 안녕하세요, 띠까라고 합니다.

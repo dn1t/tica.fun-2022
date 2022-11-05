@@ -18,7 +18,7 @@ html {
     display: inline-flex;
     align-items: baseline;
 
-    a[class='anchor'] {
+    a[class="anchor"] {
       transition: opacity 150ms;
       position: relative;
       opacity: 0;
@@ -31,7 +31,7 @@ html {
       }
     }
 
-    &:hover a[class='anchor'] {
+    &:hover a[class="anchor"] {
       opacity: 1;
     }
   }
