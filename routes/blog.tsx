@@ -71,7 +71,7 @@ export default function Home(
               props.data.blogPosts.map((post) => (
                 <a href={`/blog/${post.slug}`} class="inline-block">
                   <div
-                    class="w-full bg-center bg-cover"
+                    class="w-full bg-center bg-cover rounded-xl"
                     style={{
                       backgroundImage: `url(/api/thumbnail?title=${
                         encodeURIComponent(

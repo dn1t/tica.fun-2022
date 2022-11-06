@@ -5,7 +5,6 @@ html {
 #article {
   color: #d1d5db;
 }
-
 #article h1,
 #article h2,
 #article h3,
@@ -19,67 +18,57 @@ html {
   display: inline-flex;
   align-items: baseline;
 }
-
-#article h1 a[class="anchor"],
-#article h2 a[class="anchor"],
-#article h3 a[class="anchor"],
-#article h4 a[class="anchor"],
-#article h5 a[class="anchor"],
-#article h6 a[class="anchor"] {
+#article h1 a[class=anchor],
+#article h2 a[class=anchor],
+#article h3 a[class=anchor],
+#article h4 a[class=anchor],
+#article h5 a[class=anchor],
+#article h6 a[class=anchor] {
   transition: opacity 150ms;
   position: relative;
   opacity: 0;
 }
-
-#article h1 a[class="anchor"] .octicon.octicon-link,
-#article h2 a[class="anchor"] .octicon.octicon-link,
-#article h3 a[class="anchor"] .octicon.octicon-link,
-#article h4 a[class="anchor"] .octicon.octicon-link,
-#article h5 a[class="anchor"] .octicon.octicon-link,
-#article h6 a[class="anchor"] .octicon.octicon-link {
+#article h1 a[class=anchor] .octicon.octicon-link,
+#article h2 a[class=anchor] .octicon.octicon-link,
+#article h3 a[class=anchor] .octicon.octicon-link,
+#article h4 a[class=anchor] .octicon.octicon-link,
+#article h5 a[class=anchor] .octicon.octicon-link,
+#article h6 a[class=anchor] .octicon.octicon-link {
   fill: #9ca3af;
   left: -1.4rem;
   top: -1.1rem;
   position: absolute;
 }
-
-#article h1:hover a[class="anchor"],
-#article h2:hover a[class="anchor"],
-#article h3:hover a[class="anchor"],
-#article h4:hover a[class="anchor"],
-#article h5:hover a[class="anchor"],
-#article h6:hover a[class="anchor"] {
+#article h1:hover a[class=anchor],
+#article h2:hover a[class=anchor],
+#article h3:hover a[class=anchor],
+#article h4:hover a[class=anchor],
+#article h5:hover a[class=anchor],
+#article h6:hover a[class=anchor] {
   opacity: 1;
 }
-
 #article h1,
 #article h2 {
   border-bottom: 1px solid #111827;
   margin-bottom: 24px;
 }
-
 #article h1 {
   font-size: 30px;
 }
-
 #article h2 {
   font-size: 26px;
 }
-
 #article h3 {
   font-size: 22px;
 }
-
 #article a {
   color: #60a5fa;
   transition: color 150ms;
 }
-
 #article a:hover {
   color: #3b82f6;
   text-decoration: underline;
 }
-
 #article p,
 #article blockquote,
 #article ul,
@@ -90,19 +79,21 @@ html {
 #article details {
   margin-bottom: 16px;
 }
-
 #article ul,
 #article ol {
   padding-left: 2rem;
   list-style: initial;
 }
-
 #article li {
   margin-top: 0.25rem;
 }
-
 #article pre {
-  background-color: #11182760;
+  background-color: rgba(17, 24, 39, 0.3764705882);
   border-radius: 0.75rem;
   padding: 16px;
+}
+#article iframe {
+  width: 100%;
+  border-radius: 0.75rem;
+  margin: 1rem 0;
 }

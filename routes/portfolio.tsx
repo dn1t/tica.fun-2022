@@ -71,7 +71,7 @@ export default function Home(
             {portfolio.slice(0, 3).map((project) => (
               <a href={project.href} class="inline-block" target="_blank">
                 <div
-                  class="w-full bg-center bg-cover"
+                  class="w-full bg-center bg-cover rounded-xl"
                   style={{
                     backgroundImage: `url(${
                       project.thumbnail

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player | David Lee</title>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+  <div id="bg"
+    style="height: calc(100vh + 20rem); width: calc(100vw + 20rem); background-size: cover; background-position: center; background-repeat: no-repeat; filter: blur(5rem) brightness(30%); position: fixed; top: -10rem; left: -10rem; z-index: 0;">
+  </div>
+  <div
+    style="position: relative; z-index: 1; max-height: 100vh; height: 100vh; display: flex; align-items: center; padding: .8rem; box-sizing: border-box;">
+    <div style="display: flex; gap: 0 1rem; align-items: center; height: 100%; width: 100%;">
+      <div id="cover"
+        style="height: 100%; aspect-ratio: 1; background-position: center; background-repeat: no-repeat; background-size: contain; border-radius: .5rem;">
+      </div>
+      <div style="color: white; display: flex; flex-direction: column;">
+        <span id="name" style="font-size: 1.2rem; font-weight: 600; line-height: 1; margin-top: .1rem;"></span>
+        <span id="artists" style="font-size: .7rem; color: #9ca3af; line-height: 1; margin-top: .1rem;"></span>
+      </div>
+      <div style="margin-left: auto; display: flex; align-items: center;">
+        <button id="restart"
+          style="height: 1.2rem; margin-right: .5rem; background: none; border: 0; aspect-ratio: 1; padding: 0;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white"
+            style="height: 100%; width: 100%; aspect-ratio: 1;">
+            <path fill-rule="evenodd"
+              d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0V5.36l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z"
+              clip-rule="evenodd" />
+          </svg>
+        </button>
+        <button id="toggleBtn"
+          style="height: 4rem; border: 0; background: none; aspect-ratio: 1; border-radius: 10rem;">
+        </button>
+      </div>
+    </div>
+  </div>
+  <audio id="audio"></audio>
+
+  <svg id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"
+    style="height: 100%; width:100%; aspect-ratio: 1;">
+    <path fill-rule="evenodd"
+      d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm14.024-.983a1.125 1.125 0 010 1.966l-5.603 3.113A1.125 1.125 0 019 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113z"
+      clip-rule="evenodd" />
+  </svg>
+
+  <svg id="pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"
+    style="height: 100%; width:100%; aspect-ratio: 1;">
+    <path fill-rule="evenodd"
+      d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zM9 8.25a.75.75 0 00-.75.75v6c0 .414.336.75.75.75h.75a.75.75 0 00.75-.75V9a.75.75 0 00-.75-.75H9zm5.25 0a.75.75 0 00-.75.75v6c0 .414.336.75.75.75H15a.75.75 0 00.75-.75V9a.75.75 0 00-.75-.75h-.75z"
+      clip-rule="evenodd" />
+  </svg>
+
+
+  <script>
+    const streamUrl = '$0$'
+    const cover = '$1$'
+    const name = '$2$'
+    const artists = '$3$'
+
+    const audio = document.getElementById('audio')
+    const toggleBtn = document.getElementById('toggleBtn')
+
+    const playSVG = document.getElementById('play').outerHTML
+    const pauseSVG = document.getElementById('pause').outerHTML
+
+    document.getElementById('bg').style.backgroundImage = `url(${cover})`
+    document.getElementById('cover').style.backgroundImage = `url(${cover})`
+    document.getElementById('name').textContent = name
+    document.getElementById('artists').textContent = artists
+    audio.src = streamUrl
+    toggleBtn.innerHTML = playSVG
+    document.getElementById('restart').onclick = () => {
+      audio.pause()
+      audio.currentTime = 0
+      toggleBtn.innerHTML = playSVG
+    }
+
+    toggleBtn.onclick = () => {
+      if (audio.paused) {
+        audio.play()
+        toggleBtn.innerHTML = pauseSVG
+      } else {
+        audio.pause()
+        toggleBtn.innerHTML = playSVG
+      }
+    }
+  </script>
+</body>
+
+</html>

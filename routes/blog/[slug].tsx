@@ -101,7 +101,7 @@ export default function BlogPost(
           <div class="my-8 max-w-full slg:mr-10">
             <article class="w-full max-w-full">
               <img
-                class="w-full"
+                class="w-full rounded-xl"
                 src={`/api/thumbnail?title=${
                   encodeURIComponent(
                     props.data.title,

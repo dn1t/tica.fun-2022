@@ -86,7 +86,7 @@ export default function Home(
               props.data.blogPosts.slice(0, 3).map((post) => (
                 <a href={`/blog/${post.slug}`} class="inline-block">
                   <div
-                    class="w-full bg-center bg-cover"
+                    class="w-full bg-center bg-cover rounded-xl"
                     style={{
                       backgroundImage: `url(/api/thumbnail?title=${
                         encodeURIComponent(
@@ -134,7 +134,7 @@ export default function Home(
             {portfolio.slice(0, 3).map((project) => (
               <a href={project.href} class="inline-block" target="_blank">
                 <div
-                  class="w-full bg-center bg-cover"
+                  class="w-full bg-center bg-cover rounded-xl"
                   style={{
                     backgroundImage: `url(${
                       project.thumbnail
