@@ -5,6 +5,7 @@ import contacts from "../lib/contacts.tsx";
 import portfolio from "../lib/portfolio.ts";
 import Header from "../components/Header.tsx";
 import Nav from "../islands/Nav.tsx";
+import Age from "../islands/Age.tsx";
 
 export const handler = async (
   _req: Request,
@@ -33,13 +34,13 @@ export default function Home(
         <title>David Lee</title>
         <meta
           name="description"
-          content="I'm a developer & designer. Love building beautiful websites & apps. Currently 15-years-old (17 in Korean Age). Programming since 2017."
+          content="I'm a developer & designer. Love building beautiful websites & apps."
         />
         <meta property="og:title" content="David Lee" />
         <meta property="og:type" content="website" />
         <meta
           property="og:description"
-          content="I'm a developer & designer. Love building beautiful websites & apps. Currently 15-years-old (17 in Korean Age). Programming since 2017."
+          content="I'm a developer & designer. Love building beautiful websites & apps."
         />
         <meta property="og:url" content={props.url.href} />
         <meta
@@ -52,7 +53,7 @@ export default function Home(
         <meta name="twitter:title" content="David Lee" />
         <meta
           name="twitter:description"
-          content="I'm a developer & designer. Love building beautiful websites & apps. Currently 15-years-old (17 in Korean Age). Programming since 2017."
+          content="I'm a developer & designer. Love building beautiful websites & apps."
         />
         <meta
           name="twitter:image"
@@ -73,14 +74,7 @@ export default function Home(
           </h1>
           <p class="text-lg xs:text-xl text-gray-400 font-light mt-8">
             I'm a developer & designer. Love building beautiful websites & apps.
-            Currently {(() => {
-              const date = new Date();
-              return (
-                date.getFullYear() -
-                2006 -
-                (date.getMonth() + 1 < 10 || date.getDay() < 27 ? 1 : 0)
-              );
-            })()}
+            Currently <Age />
             -years-old ({new Date().getFullYear() - 2006 + 1}{" "}
             in Korean Age). Programming since 2017.
           </p>
