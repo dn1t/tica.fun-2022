@@ -3,7 +3,7 @@ import { Head } from "$fresh/runtime.ts";
 import { DOMParser, Element } from "deno-dom";
 import format from "format-date";
 import { render } from "gfm";
-import Nav from "../../components/Nav.tsx";
+import Nav from "../../islands/Nav.tsx";
 import Comments from "../../components/Comments.tsx";
 import { getPost } from "../../lib/post.ts";
 

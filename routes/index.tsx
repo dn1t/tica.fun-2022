@@ -4,7 +4,7 @@ import { getPosts } from "../lib/post.ts";
 import contacts from "../lib/contacts.tsx";
 import portfolio from "../lib/portfolio.ts";
 import Header from "../components/Header.tsx";
-import Nav from "../components/Nav.tsx";
+import Nav from "../islands/Nav.tsx";
 
 export const handler = async (
   _req: Request,
@@ -186,7 +186,7 @@ export default function Home(
             )}
           </div>
         </section>
-        <section>
+        <section id="contact">
           <Header title="Contact" />
           <div class="grid xs:grid-cols-2 md:grid-cols-3 gap-8 py-4 overflow-x-auto">
             {contacts.map((contact) => {

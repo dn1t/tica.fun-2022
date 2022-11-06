@@ -2,7 +2,7 @@ import { HandlerContext, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import { getPosts } from "../lib/post.ts";
 import portfolio from "../lib/portfolio.ts";
-import Nav from "../components/Nav.tsx";
+import Nav from "../islands/Nav.tsx";
 
 export const handler = async (
   _req: Request,
@@ -61,7 +61,7 @@ export default function Home(
       </Head>
       <Nav />
       <div class="px-6 xs:px-10 mx-auto max-w-screen-xl">
-        <section class="py-16">
+        <section class="pt-32 pb-8">
           <h1 class="text-3xl xxs:text-4xl xs:text-5xl md:text-6xl font-semibold font-display">
             Portfolio
           </h1>
