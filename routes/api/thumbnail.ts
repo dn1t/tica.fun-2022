@@ -57,8 +57,6 @@ export const handler = async (req: Request, _ctx: HandlerContext): Promise<Respo
     ctx.fillStyle = "white";
     const height = canvas.height / 2 - 5 + 40 / 2;
 
-    console.log(metrics);
-
     if (metrics.width > 350) {
       const words = title.split(" ");
       const slice = Math.ceil(words.length / 2);

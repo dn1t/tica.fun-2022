@@ -3,25 +3,27 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import config from "./deno.json" assert { type: "json" };
-import * as $0 from "./routes/api/music.ts";
-import * as $1 from "./routes/api/stream.ts";
-import * as $2 from "./routes/api/thumbnail.ts";
-import * as $3 from "./routes/blog.tsx";
-import * as $4 from "./routes/blog/[slug].tsx";
-import * as $5 from "./routes/index.tsx";
-import * as $6 from "./routes/portfolio.tsx";
+import * as $0 from "./routes/api/music-via-proxy.ts";
+import * as $1 from "./routes/api/music.ts";
+import * as $2 from "./routes/api/stream.ts";
+import * as $3 from "./routes/api/thumbnail.ts";
+import * as $4 from "./routes/blog.tsx";
+import * as $5 from "./routes/blog/[slug].tsx";
+import * as $6 from "./routes/index.tsx";
+import * as $7 from "./routes/portfolio.tsx";
 import * as $$0 from "./islands/Age.tsx";
 import * as $$1 from "./islands/Nav.tsx";
 
 const manifest = {
   routes: {
-    "./routes/api/music.ts": $0,
-    "./routes/api/stream.ts": $1,
-    "./routes/api/thumbnail.ts": $2,
-    "./routes/blog.tsx": $3,
-    "./routes/blog/[slug].tsx": $4,
-    "./routes/index.tsx": $5,
-    "./routes/portfolio.tsx": $6,
+    "./routes/api/music-via-proxy.ts": $0,
+    "./routes/api/music.ts": $1,
+    "./routes/api/stream.ts": $2,
+    "./routes/api/thumbnail.ts": $3,
+    "./routes/blog.tsx": $4,
+    "./routes/blog/[slug].tsx": $5,
+    "./routes/index.tsx": $6,
+    "./routes/portfolio.tsx": $7,
   },
   islands: {
     "./islands/Age.tsx": $$0,
