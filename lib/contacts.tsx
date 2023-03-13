@@ -39,7 +39,7 @@ const contacts = [
   {
     name: "Instagram",
     href: "https://instagram.com/dnlt.ek",
-    account: "wds_aa",
+    account: "dnlt.ek",
     icon: (
       // Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
