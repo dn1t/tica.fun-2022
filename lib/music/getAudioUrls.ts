@@ -11,34 +11,26 @@ async function getPageSource(url: string): Promise<string> {
 
     return html;
   } catch (_) {
-    return '';
+    return "";
   }
 }
 
 function getPlayer(source: string): string {
-  if (!source) return '';
+  if (!source) return "";
 
   const matches = source.match(/ytInitialPlayerResponse = (.*)}}};/);
-  return matches ? matches[1] + '}}}' : '';
+  return matches ? `${matches[1]}}}}` : "";
 }
 
-async function buildDecoder(
-  source: string
-): Promise<((signatureCipher: string) => string) | null> {
+async function buildDecoder(source: string): Promise<((signatureCipher: string) => string) | null> {
   if (!source) return null;
 
-  const jsMatches = source.match(
-    /\/s\/player\/[A-Za-z0-9]+\/[A-Za-z0-9_.]+\/[A-Za-z0-9_]+\/base\.js/
-  );
+  const jsMatches = source.match(/\/s\/player\/[A-Za-z0-9]+\/[A-Za-z0-9_.]+\/[A-Za-z0-9_]+\/base\.js/);
   if (!jsMatches) return null;
 
-  const jsContent = await getPageSource(
-    `https://www.youtube.com${jsMatches[0]}`
-  );
+  const jsContent = await getPageSource(`https://www.youtube.com${jsMatches[0]}`);
 
-  const decodeFuncMatches = jsContent.match(
-    /function.*\.split\(\"\"\).*\.join\(\"\"\)}/
-  );
+  const decodeFuncMatches = jsContent.match(/function.*\.split\(\"\"\).*\.join\(\"\"\)}/);
   if (!decodeFuncMatches) return null;
 
   const decodeFunc = decodeFuncMatches[0];
@@ -47,20 +39,14 @@ async function buildDecoder(
   if (!varNameMatches) return null;
 
   const varDeclareMatches = jsContent.match(
-    new RegExp(
-      `(var ${varNameMatches[1]}={[\\s\\S]+}};)[a-zA-Z0-9]+\\.[a-zA-Z0-9]+\\.prototype`
-    )
+    new RegExp(`(var ${varNameMatches[1]}={[\\s\\S]+}};)[a-zA-Z0-9]+\\.[a-zA-Z0-9]+\\.prototype`)
   );
   if (!varDeclareMatches) return null;
 
   return function (signatureCipher: string) {
     // deno-lint-ignore no-explicit-any
     const params: any = new URLSearchParams(signatureCipher);
-    const {
-      s: signature,
-      sp: signatureParam = 'signature',
-      url,
-    } = Object.fromEntries(params);
+    const { s: signature, sp: signatureParam = "signature", url } = Object.fromEntries(params);
     const decodedSignature = eval(`
         "use strict";
         ${varDeclareMatches[1]}
@@ -73,19 +59,16 @@ async function buildDecoder(
 
 async function getAudioUrls(videoId: string): Promise<AudioInfo[] | null> {
   const params = new URLSearchParams();
-  params.append('v', videoId);
+  params.append("v", videoId);
 
-  const source = await getPageSource(
-    `https://www.youtube.com/watch?${params.toString()}`
-  );
+  const source = await getPageSource(`https://www.youtube.com/watch?${params.toString()}`);
 
   try {
     const player = JSON.parse(getPlayer(source));
     const audioData = player.streamingData ?? {};
-    let formats = [
-      ...(audioData?.formats ?? []),
-      ...(audioData?.adaptiveFormats ?? []),
-    ].filter((format) => format.mimeType.includes('audio/webm'));
+    let formats = [...(audioData?.formats ?? []), ...(audioData?.adaptiveFormats ?? [])].filter((format) =>
+      format.mimeType.includes("audio/webm")
+    );
 
     if (formats.find((format) => format.signatureCipher)) {
       const decoder = await buildDecoder(source);
