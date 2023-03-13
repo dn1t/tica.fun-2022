@@ -3,7 +3,7 @@
     "@preact/signals": "https://esm.sh/*@preact/signals@1.0.3",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.0.1",
     "$fresh/": "https://deno.land/x/fresh@1.1.1/",
-    "canvas": "https://deno.land/x/canvaseno@v1.0.2/mod.ts",
+    "canvas": "https://deno.land/x/canvas/mod.ts",
     "deno-dom": "https://deno.land/x/deno_dom@v0.1.35-alpha/deno-dom-wasm.ts",
     "format-date": "https://deno.land/x/date_fns@v2.22.1/format/index.js",
     "front-matter": "https://deno.land/std@0.158.0/encoding/front_matter.ts",
