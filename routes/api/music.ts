@@ -27,7 +27,11 @@ export const handler = async (req: Request, _ctx: HandlerContext): Promise<Respo
     // console.log(encodeURIComponent(stream.url));
 
     return new Response(
-      html.replace("$0$", stream.url).replace("$1$", cover).replace("$2$", name).replace("$3$", artists.join(",")),
+      html
+        .replace("$0$", encodeURIComponent(stream.url))
+        .replace("$1$", cover)
+        .replace("$2$", name)
+        .replace("$3$", artists.join(",")),
       { headers: { "Content-Type": "text/html" } }
     );
   } catch (err) {
