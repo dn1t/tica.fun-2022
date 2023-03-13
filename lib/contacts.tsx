@@ -93,8 +93,8 @@ const contacts = [
   },
   {
     name: "Telegram",
-    href: "https://t.me/thoratica",
-    account: "thoratica",
+    href: "https://t.me/ifkakao",
+    account: "ifkakao",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
         <path
