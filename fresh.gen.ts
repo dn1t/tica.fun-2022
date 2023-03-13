@@ -7,10 +7,11 @@ import * as $0 from "./routes/api/music-via-proxy.ts";
 import * as $1 from "./routes/api/music.ts";
 import * as $2 from "./routes/api/stream.ts";
 import * as $3 from "./routes/api/thumbnail.ts";
-import * as $4 from "./routes/blog.tsx";
-import * as $5 from "./routes/blog/[slug].tsx";
-import * as $6 from "./routes/index.tsx";
-import * as $7 from "./routes/portfolio.tsx";
+import * as $4 from "./routes/api/track.ts";
+import * as $5 from "./routes/blog.tsx";
+import * as $6 from "./routes/blog/[slug].tsx";
+import * as $7 from "./routes/index.tsx";
+import * as $8 from "./routes/portfolio.tsx";
 import * as $$0 from "./islands/Age.tsx";
 import * as $$1 from "./islands/Nav.tsx";
 
@@ -20,10 +21,11 @@ const manifest = {
     "./routes/api/music.ts": $1,
     "./routes/api/stream.ts": $2,
     "./routes/api/thumbnail.ts": $3,
-    "./routes/blog.tsx": $4,
-    "./routes/blog/[slug].tsx": $5,
-    "./routes/index.tsx": $6,
-    "./routes/portfolio.tsx": $7,
+    "./routes/api/track.ts": $4,
+    "./routes/blog.tsx": $5,
+    "./routes/blog/[slug].tsx": $6,
+    "./routes/index.tsx": $7,
+    "./routes/portfolio.tsx": $8,
   },
   islands: {
     "./islands/Age.tsx": $$0,
